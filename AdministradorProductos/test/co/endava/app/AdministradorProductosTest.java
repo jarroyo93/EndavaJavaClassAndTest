@@ -2,7 +2,7 @@ package co.endava.app;
 
 
 import co.endava.datos.Comida;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -12,8 +12,13 @@ import java.time.LocalDate;
 
 class AdministradorProductosTest {
 
+    @BeforeAll
+    public void init() {
+
+    }
+
     @Test
-    public void descuento() {
+    public void testDescuento() {
 
         double porcentajeControl = 10;
         Comida p3 = new Comida(103, "Pastel", 2000, LocalDate.now().plusDays(2));
@@ -22,4 +27,7 @@ class AdministradorProductosTest {
 
         assertEquals(porcentajeControl, percentProduct);
     }
+
+
+
 }
